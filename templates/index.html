@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Flask App</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/about">About</a>
+    </nav>
+    <div>
+        <p style="font-size: 35px">Hello from Saim</p>
+
+        <div class="main2">
+            <h2>To-Do List</h2>
+        <ul>
+            {% for task in tasks %}
+            <li>{{ task }}</li>
+            {% endfor %}
+        </ul>
+        </div>
+
+        <form action="/add_task" method="post">
+            <label for="task">Add Task:</label>
+            <input type="text" id="task" name="task" required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</body>
+
+
+</html>
